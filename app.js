@@ -5,6 +5,8 @@ var button4 = document.getElementById('btn4')
 var button5 = document.getElementById('btn5')
 var button6 = document.getElementById('btn6')
 var button7 = document.getElementById('btn7')
+var button8 = document.getElementById('btn8')
+var button9 = document.getElementById('btn9')
 
 
 
@@ -31,6 +33,8 @@ button4.addEventListener('click', rightTheText)
 button5.addEventListener('click', leftTheText)
 button6.addEventListener('click', underLineTheText)
 button7.addEventListener('click', eraseAllText)
+button8.addEventListener('click', colorsNames)
+button9.addEventListener('click', bgColorNames)
 
 function boldTheText() {
 
@@ -110,142 +114,79 @@ function eraseAllText() {
         eraseText = true;
     }
 }
-
-var color0 = document.getElementById('grey')
-var color1 = document.getElementById('deepink')
-var color2 = document.getElementById('red')
-var color3 = document.getElementById('green')
-var color4 = document.getElementById('orange')
-var color5 = document.getElementById('Blue')
-var color6 = document.getElementById('Purple')
-var color7 = document.getElementById('Black')
-var color8 = document.getElementById('White')
-var color9 = document.getElementById('Yellow')
-var grey = false;
-var pink = false;
-var red = false;
-var green = false;
-var orange = false;
-var blue = false;
-var purple = false;
-var black = false;
-var white = false;
-var yellow = false;
-
-color0.addEventListener('click' , changeColor1) 
-color1.addEventListener('click', changeColor2)
-color2.addEventListener('click', changeColor3)
-color3.addEventListener('click', changeColor4)
-color4.addEventListener('click', changeColor5)
-color5.addEventListener('click', changeColor6)
-color6.addEventListener('click', changeColor7)
-color7.addEventListener('click', changeColor8)
-color8.addEventListener('click', changeColor9)
-color9.addEventListener('click', changeColor10)
-
-function changeColor1() {
-    if (grey) {
-        document.getElementById('bold').style.color = 'black';
-        grey = false;
-    } else {
-        document.getElementById('bold').style.color = 'grey';
-        grey = true;
-    }
-}
-function changeColor2() {
-    if (pink) {
-        document.getElementById('bold').style.color = 'black';
-        pink = false;
-    } else {
-        document.getElementById('bold').style.color = 'deeppink';
-        pink = true;
-    }
-}
-function changeColor3() {
-    if (red) {
-        document.getElementById('bold').style.color = 'black';
-        red = false;
-    } else {
-        document.getElementById('bold').style.color = 'red';
-        red = true;
-    }
-}
-function changeColor4() {
-    if (green) {
-        document.getElementById('bold').style.color = 'black';
-        grey = false;
-    } else {
-        document.getElementById('bold').style.color = 'green';
-        green = true;
-    }
-}
-function changeColor5() {
-    if (orange) {
-        document.getElementById('bold').style.color = 'black';
-        orange = false;
-    } else {
+var userTextColor = false;
+var color = ['grey','deepink','red','green','orange','blue','purple','black','white','yellow']
+function colorsNames(color){
+    var userColor = +prompt("Which color do you want inter the number 1.Grey, 2.deeppink, 3.Red, 4.Green, 5.Orange, 6.Blue, 7.Purple, 8.Black, 9.White, 10.Yellow ")
+    if(userColor === 0 && userTextColor){
+        document.getElementById('bold').style.color = 'black'
+    }else if(userColor === 1){
+        document.getElementById('bold').style.color = 'grey'; 
+        // userTextColor = false; 
+    }else if(userColor === 2){
+        document.getElementById('bold').style.color = 'deeppink'  
+        // userTextColor = false; 
+    }else if(userColor === 3){
+        document.getElementById('bold').style.color =  'red';
+        
+    }else if(userColor === 4){
+        document.getElementById('bold').style.color = 'green';  
+    }else if(userColor === 5){
         document.getElementById('bold').style.color = 'orange';
-        orange = true;
-    }
-}
-function changeColor6() {
-    if (blue) {
-        document.getElementById('bold').style.color = 'black';
-        blue = false;
-    } else {
+    }else if(userColor === 6){
         document.getElementById('bold').style.color = 'blue';
-        blue = true;
-    }
-}
-function changeColor7() {
-    if (purple) {
-        document.getElementById('bold').style.color = 'black';
-        purple = false;
-    } else {
-        document.getElementById('bold').style.color = 'purple';
-        purple = true;
-    }
-}
-function changeColor8() {
-    if (black) {
-        document.getElementById('bold').style.color = 'black';
-        black = false;
-    } else {
-        document.getElementById('bold').style.color = 'black';
-        black = true;
-    }
-}
-function changeColor9() {
-    if (white) {
-        document.getElementById('bold').style.color = 'black';
-        white = false;
-    } else {
-        document.getElementById('bold').style.backgroundColor = 'black';
+    }else if(userColor === 7){
+        document.getElementById('bold').style.color = 'purple';  
+    }else if(userColor === 8){
+        document.getElementById('bold').style.color = 'black';  
+        document.getElementById('bold').style.backgroundColor = 'white';  
 
-        document.getElementById('bold').style.color = 'white';
-        white = true;
-    }
-}
-function changeColor10() {
-    if (yellow) {
-        document.getElementById('bold').style.color = 'black';
-        yellow = false;
-    } else {
-        document.getElementById('bold').style.color = 'yrllow';
-        yellow = true;
-    }
-}
-
-var greyColor = document.getElementById('grey')
-greyColor.addEventListener('click' , changeColor1)
-var grey = false
-
-function changeColor1(){
-    if(grey){ 
-    document.getElementById('bold').style.color = 'black';
-    grey = true
+    }else if(userColor === 9){
+        document.getElementById('bold').style.color = 'white'; 
+        document.getElementById('bold').style.backgroundColor = 'black';  
+    }else if(userColor === 10){
+        document.getElementById('bold').style.color = 'yellow';  
     }else{
-    document.getElementById('bold').style.color = 'grey';
-grey = true;
+        alert('Please select the coloe')
     }
+    userTextColor = true;
 }
+var userBgColor = false;
+function bgColorNames(){
+    var userbgColor = +prompt("Which color do you want inter the number 1.Grey, 2.deeppink, 3.Red, 4.Green, 5.Orange, 6.Blue, 7.Purple, 8.Black, 9.White, 10.Yellow ")
+    if(userbgColor === 0 && userBgColor){
+        document.getElementById('bold').style.backgroundColor = 'black'
+    }else if(userbgColor === 1){
+        document.getElementById('bold').style.backgroundColor = 'grey'; 
+        // userTextColor = false; 
+    }else if(userbgColor === 2){
+        document.getElementById('bold').style.backgroundColor = 'deeppink'  
+        // userTextColor = false; 
+    }else if(userbgColor === 3){
+        document.getElementById('bold').style.backgroundColor =  'red';
+        
+    }else if(userbgColor === 4){
+        document.getElementById('bold').style.backgroundColor = 'green';  
+    }else if(userbgColor === 5){
+        document.getElementById('bold').style.backgroundColor = 'orange';
+    }else if(userbgColor === 6){
+        document.getElementById('bold').style.backgroundColor = 'blue';
+    }else if(userbgColor === 7){
+        document.getElementById('bold').style.backgroundColor = 'purple';  
+    }else if(userbgColor === 8){
+        document.getElementById('bold').style.color = 'white';  
+        document.getElementById('bold').style.backgroundColor = 'black';  
+
+    }else if(userbgColor === 9){
+        document.getElementById('bold').style.backgroundColor = 'white'; 
+        document.getElementById('bold').style.color = 'black';  
+    }else if(userbgColor === 10){
+        document.getElementById('bold').style.backgroundColor = 'yellow';  
+    }else{
+        alert('Please select the coloe')
+    }
+    userBgColor = true;
+}
+
+
+

@@ -1,6 +1,16 @@
-/* .btn1{
-    display: inline;
-    display: flex;
-    justify-content: space-between;
-    color: ;
-} */
+.btn{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   margin-left: 10px;
+   height: 30px;
+   width: 100px;
+   border-radius: 50px;
+   color: white;
+   background-color: black;
+}
+#head{
+    text-align: center;
+}
+#row{
+    background-color: blue;
+}
